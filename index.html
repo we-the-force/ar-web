@@ -1,4 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="./aframe-extras.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
 <!-- style for the loader -->
@@ -21,6 +22,26 @@
         font-size: 1.25em;
         color: white;
     }
+    
+    .play-overlay {
+        z-index: 99999;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        box-sizing: border-box;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 12px 24px;
+        padding-bottom: 0px;
+        background: rgba(0, 123, 255) url(play.png) center no-repeat;
+        background-size: 40px 40px;
+    }
+    
+    .play-overlay:hover {
+        background: rgba(0, 0, 0, 0.2) url(play.png) center no-repeat;
+        background-size: 40px 40px;
+    }
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -28,7 +49,9 @@
     <div class="arjs-loader">
         <div>Cargando WTF 3D...</div>
     </div>
-
+    <a id="playButton" onclick="play('alpha')">
+        <div class="btn btn-primary play-overlay menu-overlay"></div>
+    </a>
     <!-- a-frame scene -->
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
         <!-- <a-assets>
@@ -37,14 +60,41 @@
         <!-- a-nft is the anchor that defines an Image Tracking entity -->
         <!-- on 'url' use the path to the Image Descriptors created before. -->
         <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-
+        <a-assets>
+            <video id="alpha" autoplay loop="true" src="wtf_reel.mp4"></video>
+        </a-assets>
         <a-nft type="nft" url="./marker" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
             <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-            <a-entity gltf-model="./Px07.glb" scale="20 20 20" position="0 0 0">
+            <a-entity gltf-model="./Bx01.glb" animation-mixer="clip: *;" scale="100 100 100" position="100 0 50">
             </a-entity>
-            <!-- <a-video src="./wtf_reel.mp4" autoplay width="640" height="360" position="-320 0 0"></a-video> -->
+            <a-video src="#alpha" autoplay width="640" height="360" position="320 0 10"></a-video>
         </a-nft>
         <!-- static camera that moves according to the device movemenents -->
         <a-entity camera></a-entity>
     </a-scene>
+    <script>
+        var sceneEl = document.querySelector('a-scene');
+        var entity = sceneEl.querySelector('a-entity');
+        console.log();
+
+        function play(id) {
+            var aVideoAsset = document.querySelector('#' + id);
+            aVideoAsset.play().catch(function(error) {
+                aVideoAsset.pause();
+                hideOrShow("playButton");
+
+            });
+            aVideoAsset.setAttribute('loop', 'false');
+            hideOrShow('playButton');
+        }
+
+        function hideOrShow(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </body>

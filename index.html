@@ -61,15 +61,15 @@
         <!-- on 'url' use the path to the Image Descriptors created before. -->
         <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
         <a-assets>
-            <video id="alpha" autoplay loop="true" src="wtf_reel.mp4"></video>
+            <video id="alpha" playsinline autoplay muted loop src="lycra_vid.webm"></video>
         </a-assets>
 
         <!-- Marker generator https://carnaux.github.io/NFT-Marker-Creator/ -->
         
         <a-nft type="nft" url="./red_marker" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
             <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-            <a-entity gltf-model="./3d/mixed_reality.glb" animation-mixer="clip: *;" scale="100 100 100" position="0 0 10">
-            </a-entity>
+            <!-- <a-entity gltf-model="./3d/mixed_reality.glb" animation-mixer="clip: *;" scale="100 100 100" position="0 0 10">
+            </a-entity> -->
             <a-video src="#alpha" autoplay width="640" height="360" position="0 0 1"></a-video>
         </a-nft>
         <!-- static camera that moves according to the device movemenents -->

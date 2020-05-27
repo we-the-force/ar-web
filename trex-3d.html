@@ -39,13 +39,21 @@
         <a-nft
             type='nft' url='./tks'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <a-entity
+            <!-- <a-entity
                 gltf-model="url(./cube.glb)"
                 scale="50 50 50"
                 position="0 0 0"
                 animation-mixer="clip: *;"
                 >
+            </a-entity> -->
+            <a-entity
+                fbx-model="src: url(cube.fbx);"
+                scale="50 50 50"
+                position="0 0 0"
+                animation-mixer="clip: *;"
+                >
             </a-entity>
+            
         </a-nft>
 		<a-entity camera></a-entity>
     </a-scene>

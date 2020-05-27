@@ -158,10 +158,10 @@
        
 
         function play(id) {
-            id.play().then(()=>id.pause()); // grants full access to the video
+            alpha.play().then(()=>alpha.pause()); // grants full access to the video
             hideOrShow("playButton");
             hideOrShow("bgoverlay");
-            setTimeout(()=> id.play().catch(console.error), 5000);
+            setTimeout(()=> alpha.play().catch(console.error), 5000);
             var aVideoAsset = document.querySelector('#' + id);
             
             // aVideoAsset.play().catch(function(error) {

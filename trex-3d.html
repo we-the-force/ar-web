@@ -1,6 +1,6 @@
 <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
 <script src='./aframe-extras.min.js'></script>
-<script src='./inflate.min.js'></script>
+<!-- <script src='./inflate.min.js'></script> -->
 
 <style>
   .arjs-loader {
@@ -40,20 +40,20 @@
         <a-nft
             type='nft' url='./tks'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <!-- <a-entity
-                gltf-model="url(./cube.glb)"
-                scale="50 50 50"
-                position="0 0 0"
-                animation-mixer="clip: *;"
-                >
-            </a-entity> -->
             <a-entity
-                fbx-model="src: url(cube.fbx);"
+                gltf-model="url(./cube.gltf)"
                 scale="50 50 50"
                 position="0 0 0"
                 animation-mixer="clip: *;"
                 >
             </a-entity>
+            <!-- <a-entity
+                fbx-model="src: url(cube.fbx);"
+                scale="50 50 50"
+                position="0 0 0"
+                animation-mixer="clip: *;"
+                >
+            </a-entity> -->
             
         </a-nft>
 		<a-entity camera></a-entity>

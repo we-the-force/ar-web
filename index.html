@@ -1,70 +1,121 @@
-<!-- <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script> -->
-<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-<script src="./aframe-extras.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-<!-- style for the loader -->
-<style>
-    .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: none;
-    }
-    
-    .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-        display: none;
-    }
-    #bgoverlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-color: #fff;
-        z-index: 1;
-    }
-    #bgoverlay p {
-        font-family:Arial, Helvetica, sans-serif;
-        font-size: 23px;
-        width: 100%;
-        text-align: center;
-        color: rgb(224, 46, 46);
-        position: absolute;
-        top: 50%;
-        transform: translate(0, 11px);
-    }
-    .play-overlay {
-        z-index: 99999;
-        position: fixed;
-        bottom: 50%;
-        transform: translate(30px, 30px);
-        right: 50%;
-        box-sizing: border-box;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        padding: 12px 24px;
-        padding-bottom: 0px;
-        background: rgb(224, 46, 46) url(play.png) center no-repeat;
-        background-size: 40px 40px;
-    }
-    
-    .play-overlay:hover {
-        background: rgba(0, 0, 0, 0.2) url(play.png) center no-repeat;
-        background-size: 40px 40px;
-    }
-</style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Lycra Thanks</title>
+        <!-- style and script resources -->
+        <link rel="stylesheet" href="" media="all">
+        <script src=""></script>
+        <!--meta properties -->
+        <meta name="description" content=" Thank you for your time." />
+        <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
+        <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1" />
+        <link rel="canonical" href="" />
+        <!--open graph meta tags for social sites and search engines-->
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Lycra Thanks" />
+        <meta property="og:description" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:image" content="https://wtfarweb.netlify.app/thnks.png" />
+        <meta property="og:image:secure_url" content="https://wtfarweb.netlify.app/thnks.png" />
+        <meta property="og:image:width" content="754" />
+        <meta property="og:image:height" content="582" />
+        <!--twitter description-->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content="." />
+        <meta name="twitter:title" content="Lycra Thanks" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:image" content="https://wtfarweb.netlify.app/thnks.png" />
+        <meta name="twitter:creator" content="@" />
+        <!--opengraph tags for location or address for information panel in google-->
+        <meta name="og:latitude" content="" />
+        <meta name="og:longitude" content="" />
+        <meta name="og:street-address" content="" />
+        <meta name="og:locality" content="" />
+        <meta name="og:region" content="" />
+        <meta name="og:postal-code" content="" />
+        <meta name="og:country-name" content="" />
+        <!--search engine verification-->
+        <meta name="google-site-verification" content="" />
+        <meta name="yandex-verification" content="" />
+        <!--powered by meta-->
+        <meta name="generator" content="" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script> -->
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="./aframe-extras.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+        <!-- style for the loader -->
+        <style>
+            .arjs-loader {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.8);
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+
+            .arjs-loader div {
+                text-align: center;
+                font-size: 1.25em;
+                color: white;
+                display: none;
+            }
+            #bgoverlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: #fff;
+                z-index: 1;
+            }
+            #bgoverlay p {
+                font-family:Arial, Helvetica, sans-serif;
+                font-size: 23px;
+                width: 100%;
+                text-align: center;
+                color: rgb(224, 46, 46);
+                position: absolute;
+                top: 50%;
+                transform: translate(0, 11px);
+            }
+            .play-overlay {
+                z-index: 99999;
+                position: fixed;
+                bottom: 50%;
+                transform: translate(30px, 30px);
+                right: 50%;
+                box-sizing: border-box;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                padding: 12px 24px;
+                padding-bottom: 0px;
+                background: rgb(224, 46, 46) url(play.png) center no-repeat;
+                background-size: 40px 40px;
+            }
+
+            .play-overlay:hover {
+                background: rgba(0, 0, 0, 0.2) url(play.png) center no-repeat;
+                background-size: 40px 40px;
+            }
+        </style>
+    </head>
+
 
 <body style="margin : 0px; overflow: hidden;">
     <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
@@ -129,3 +180,4 @@
         }
     </script>
 </body>
+</html>

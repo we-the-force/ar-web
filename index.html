@@ -58,6 +58,12 @@
 
         <!-- style for the loader -->
         <style>
+            canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
             .arjs-loader {
                 height: 100%;
                 width: 100%;
@@ -85,7 +91,7 @@
                 top: 0;
                 left: 0;
                 background-color: #fff;
-                z-index: 1;
+                z-index: 10;
             }
             #bgoverlay p {
                 font-family:Arial, Helvetica, sans-serif;
@@ -144,12 +150,12 @@
 
         <!-- Marker generator https://carnaux.github.io/NFT-Marker-Creator/ -->
         
-        <a-nft type="nft" url="./tks" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+        <a-marker-camera type='pattern' url='tks.patt'>
             <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
             <a-entity gltf-model="./3d/mixed_reality.glb" animation-mixer="clip: *;" scale="100 100 100" position="0 0 10">
             </a-entity>
             <a-video src="#alpha" autoplay width="640" height="360" rotation="-90 0 0" scale="0.4 0.4 1" position="50 -200 1"></a-video>
-        </a-nft>
+        </a-marker-camera>
         <!-- static camera that moves according to the device movemenents -->
         <a-entity camera></a-entity>
     </a-scene>

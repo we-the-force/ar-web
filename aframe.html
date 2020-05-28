@@ -134,16 +134,10 @@
         var sceneEl = document.querySelector('a-scene');
         var entity = sceneEl.querySelector('a-entity');
         console.log();
+        vid.pause();
 
         function play(id) {
-            var aVideoAsset = document.querySelector('#' + id);
-            aVideoAsset.play().catch(function(error) {
-                aVideoAsset.pause();
-                hideOrShow("playButton");
-                hideOrShow("bgoverlay");
-
-            });
-            aVideoAsset.setAttribute('loop', 'false');
+            vid.play();
             hideOrShow('playButton');
             hideOrShow("bgoverlay");
 

@@ -7,6 +7,7 @@
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script>
 
     <!-- style for the loader -->
     <style>
@@ -17,7 +18,7 @@
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
+        z-index: 100;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -87,7 +88,7 @@
       <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
       <a-assets>
       <img id="transpImage" crossorigin="anonymous" src="./dm.png">
-<video id="vid" autoplay loop="true" src="lycra-vid.mp4"></video>
+<video id="vid" autoplay loop="true" src="lycra_vid.webm"></video>
 
       </a-assets>
       <a-nft
@@ -98,7 +99,9 @@
         smoothTolerance=".01"
         smoothThreshold="5">
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-          <a-video src="#vid" width="16" height="9" scale="10 10 10" position="0 0 -20"></a-video>
+          <a-entity material="shader: transparent-video;" geometry="primitive: plane;
+          width: 16;
+          height: 9" src="#vid"  scale="10 10 10" position="0 0 -20"></a-entity>
           <a-entity
               gltf-model="url(./logowtf.glb)"
               scale="25 25 25"
@@ -112,7 +115,7 @@
           gltf-model="./scene2.glb"
           scale="30 30 30"
               position="50 100 -200"
-              rotation="-90 0 0"
+              rotation="0 0 0"
               animation-mixer="clip: *;"
           >
           </a-entity>
@@ -121,11 +124,11 @@
       <!-- static camera that moves according to the device movemenents -->
       <a-entity camera></a-entity>
     </a-scene>
-    <!-- <a id="playButton" onclick="play('vid')">
+    <a id="playButton" onclick="play('arjs-video')">
         <div class="btn btn-primary play-overlay menu-overlay"></div>
-    </a> -->
+    </a>
     <div id="bgoverlay">
-        <a onclick="play('vid')"><p>Start</p></a>
+        <p>Start</p>
     </div>
     <script>
         var sceneEl = document.querySelector('a-scene');
@@ -135,13 +138,13 @@
         function play(id) {
             var aVideoAsset = document.querySelector('#' + id);
             aVideoAsset.play().catch(function(error) {
-                aVideoAsset.pause();
-                // hideOrShow("playButton");
+                aVideoAsset
+                hideOrShow("playButton");
                 hideOrShow("bgoverlay");
 
             });
             aVideoAsset.setAttribute('loop', 'false');
-            // hideOrShow('playButton');
+            hideOrShow('playButton');
             hideOrShow("bgoverlay");
 
         }

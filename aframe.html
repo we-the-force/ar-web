@@ -22,6 +22,45 @@
         justify-content: center;
         align-items: center;
       }
+      #bgoverlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: #fff;
+          z-index: 1;
+      }
+      #bgoverlay p {
+          font-family:Arial, Helvetica, sans-serif;
+          font-size: 23px;
+          width: 100%;
+          text-align: center;
+          color: rgb(224, 46, 46);
+          position: absolute;
+          top: 50%;
+          transform: translate(0, 11px);
+      }
+      .play-overlay {
+          z-index: 99999;
+          position: fixed;
+          bottom: 50%;
+          transform: translate(30px, 30px);
+          right: 50%;
+          box-sizing: border-box;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          padding: 12px 24px;
+          padding-bottom: 0px;
+          background: rgb(224, 46, 46) url(play.png) center no-repeat;
+          background-size: 40px 40px;
+      }
+
+      .play-overlay:hover {
+          background: rgba(0, 0, 0, 0.2) url(play.png) center no-repeat;
+          background-size: 40px 40px;
+      }
 
       .arjs-loader div {
         text-align: center;
@@ -82,5 +121,39 @@
       <!-- static camera that moves according to the device movemenents -->
       <a-entity camera></a-entity>
     </a-scene>
+    <!-- <a id="playButton" onclick="play('vid')">
+        <div class="btn btn-primary play-overlay menu-overlay"></div>
+    </a> -->
+    <div id="bgoverlay">
+        <a onclick="play('vid')"><p>Start</p></a>
+    </div>
+    <script>
+        var sceneEl = document.querySelector('a-scene');
+        var entity = sceneEl.querySelector('a-entity');
+        console.log();
+
+        function play(id) {
+            var aVideoAsset = document.querySelector('#' + id);
+            aVideoAsset.play().catch(function(error) {
+                aVideoAsset.pause();
+                // hideOrShow("playButton");
+                hideOrShow("bgoverlay");
+
+            });
+            aVideoAsset.setAttribute('loop', 'false');
+            // hideOrShow('playButton');
+            hideOrShow("bgoverlay");
+
+        }
+
+        function hideOrShow(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
   </body>
 </html>

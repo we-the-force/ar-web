@@ -17,7 +17,7 @@
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
+        z-index: 100;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -121,11 +121,11 @@
       <!-- static camera that moves according to the device movemenents -->
       <a-entity camera></a-entity>
     </a-scene>
-    <!-- <a id="playButton" onclick="play('vid')">
+    <a id="playButton" onclick="play('vid')">
         <div class="btn btn-primary play-overlay menu-overlay"></div>
-    </a> -->
+    </a>
     <div id="bgoverlay">
-        <a onclick="play('vid')"><p>Start</p></a>
+        <p>Start</p>
     </div>
     <script>
         var sceneEl = document.querySelector('a-scene');
@@ -136,12 +136,12 @@
             var aVideoAsset = document.querySelector('#' + id);
             aVideoAsset.play().catch(function(error) {
                 aVideoAsset.pause();
-                // hideOrShow("playButton");
+                hideOrShow("playButton");
                 hideOrShow("bgoverlay");
 
             });
             aVideoAsset.setAttribute('loop', 'false');
-            // hideOrShow('playButton');
+            hideOrShow('playButton');
             hideOrShow("bgoverlay");
 
         }

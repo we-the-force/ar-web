@@ -124,7 +124,7 @@
       <!-- static camera that moves according to the device movemenents -->
       <a-entity camera></a-entity>
     </a-scene>
-    <a id="playButton" onclick="play('vid')">
+    <a id="playButton" onclick="play('arjs-video')">
         <div class="btn btn-primary play-overlay menu-overlay"></div>
     </a>
     <div id="bgoverlay">
@@ -134,10 +134,16 @@
         var sceneEl = document.querySelector('a-scene');
         var entity = sceneEl.querySelector('a-entity');
         console.log();
-        vid.pause();
 
         function play(id) {
-            vid.play();
+            var aVideoAsset = document.querySelector('#' + id);
+            aVideoAsset.play().catch(function(error) {
+                aVideoAsset
+                hideOrShow("playButton");
+                hideOrShow("bgoverlay");
+
+            });
+            aVideoAsset.setAttribute('loop', 'false');
             hideOrShow('playButton');
             hideOrShow("bgoverlay");
 

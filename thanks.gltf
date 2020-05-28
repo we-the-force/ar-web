@@ -1,0 +1,175 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v0.9.36",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "glTF2ExportSettings" : {
+                    "export_all_influences" : 1,
+                    "export_apply" : 1,
+                    "export_draco_mesh_compression_enable" : 1,
+                    "export_extras" : 1,
+                    "export_format" : "GLTF_EMBEDDED",
+                    "export_frame_range" : 0,
+                    "export_morph_tangent" : 1,
+                    "export_tangents" : 1,
+                    "export_yup" : 0
+                }
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Text",
+            "translation" : [
+                0,
+                -2.3256473541259766,
+                0
+            ]
+        },
+        {
+            "name" : "Text.001",
+            "scale" : [
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071
+            ],
+            "translation" : [
+                0,
+                -3.851170063018799,
+                0
+            ]
+        },
+        {
+            "name" : "Empty",
+            "scale" : [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "translation" : [
+                -5.668622970581055,
+                -0.20000000298023224,
+                2
+            ]
+        },
+        {
+            "name" : "Empty.001",
+            "scale" : [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "translation" : [
+                5.625439167022705,
+                -0.20000000298023224,
+                2
+            ]
+        }
+    ],
+    "animations" : [
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 2,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "EmptyAction",
+            "samplers" : [
+                {
+                    "input" : 0,
+                    "interpolation" : "LINEAR",
+                    "output" : 1
+                }
+            ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 3,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "Empty.001Action",
+            "samplers" : [
+                {
+                    "input" : 0,
+                    "interpolation" : "LINEAR",
+                    "output" : 2
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 61,
+            "max" : [
+                2.5
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 61,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 61,
+            "type" : "VEC4"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 244,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 976,
+            "byteOffset" : 244
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 976,
+            "byteOffset" : 1220
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 2196,
+            "uri" : "data:application/octet-stream;base64,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"
+        }
+    ]
+}

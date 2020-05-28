@@ -3,6 +3,28 @@
         "generator" : "Khronos glTF Blender I/O v0.9.36",
         "version" : "2.0"
     },
+    "extensionsUsed" : [
+        "KHR_lights_punctual"
+    ],
+    "extensionsRequired" : [
+        "KHR_lights_punctual"
+    ],
+    "extensions" : {
+        "KHR_lights_punctual" : {
+            "lights" : [
+                {
+                    "color" : [
+                        1,
+                        1,
+                        1
+                    ],
+                    "intensity" : 10,
+                    "type" : "point",
+                    "name" : "Point"
+                }
+            ]
+        }
+    },
     "scene" : 0,
     "scenes" : [
         {
@@ -10,11 +32,14 @@
                 "glTF2ExportSettings" : {
                     "export_all_influences" : 1,
                     "export_apply" : 1,
+                    "export_cameras" : 1,
                     "export_draco_mesh_compression_enable" : 0,
                     "export_extras" : 1,
                     "export_format" : "GLTF_EMBEDDED",
                     "export_frame_range" : 0,
+                    "export_lights" : 1,
                     "export_morph_tangent" : 1,
+                    "export_selected" : 1,
                     "export_tangents" : 1,
                     "export_yup" : 1
                 }
@@ -24,7 +49,9 @@
                 0,
                 1,
                 2,
-                3
+                3,
+                5,
+                7
             ]
         }
     ],
@@ -75,6 +102,63 @@
                 2,
                 0.20000000298023224
             ]
+        },
+        {
+            "camera" : 0,
+            "name" : "Camera_Orientation",
+            "rotation" : [
+                -0.7071067690849304,
+                0,
+                0,
+                0.7071067690849304
+            ]
+        },
+        {
+            "children" : [
+                4
+            ],
+            "name" : "Camera",
+            "translation" : [
+                0,
+                9.671539306640625,
+                0
+            ]
+        },
+        {
+            "extensions" : {
+                "KHR_lights_punctual" : {
+                    "light" : 0
+                }
+            },
+            "name" : "Point_Orientation",
+            "rotation" : [
+                -0.7071067690849304,
+                0,
+                0,
+                0.7071067690849304
+            ]
+        },
+        {
+            "children" : [
+                6
+            ],
+            "name" : "Point",
+            "translation" : [
+                0.06617248058319092,
+                7.331976413726807,
+                2.20064115524292
+            ]
+        }
+    ],
+    "cameras" : [
+        {
+            "name" : "Camera.001",
+            "perspective" : {
+                "yfov" : 0.39959648408210363,
+                "zfar" : 1000,
+                "znear" : 0.10000000149011612
+            },
+            "type" : "perspective"
         }
     ],
     "animations" : [
@@ -115,6 +199,92 @@
                     "output" : 2
                 }
             ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 5,
+                        "path" : "translation"
+                    }
+                },
+                {
+                    "sampler" : 1,
+                    "target" : {
+                        "node" : 5,
+                        "path" : "rotation"
+                    }
+                },
+                {
+                    "sampler" : 2,
+                    "target" : {
+                        "node" : 5,
+                        "path" : "scale"
+                    }
+                }
+            ],
+            "name" : "CameraAction",
+            "samplers" : [
+                {
+                    "input" : 3,
+                    "interpolation" : "STEP",
+                    "output" : 4
+                },
+                {
+                    "input" : 3,
+                    "interpolation" : "STEP",
+                    "output" : 5
+                },
+                {
+                    "input" : 3,
+                    "interpolation" : "STEP",
+                    "output" : 6
+                }
+            ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 7,
+                        "path" : "translation"
+                    }
+                },
+                {
+                    "sampler" : 1,
+                    "target" : {
+                        "node" : 7,
+                        "path" : "rotation"
+                    }
+                },
+                {
+                    "sampler" : 2,
+                    "target" : {
+                        "node" : 7,
+                        "path" : "scale"
+                    }
+                }
+            ],
+            "name" : "PointAction",
+            "samplers" : [
+                {
+                    "input" : 3,
+                    "interpolation" : "STEP",
+                    "output" : 7
+                },
+                {
+                    "input" : 3,
+                    "interpolation" : "STEP",
+                    "output" : 8
+                },
+                {
+                    "input" : 3,
+                    "interpolation" : "STEP",
+                    "output" : 9
+                }
+            ]
         }
     ],
     "accessors" : [
@@ -141,6 +311,54 @@
             "componentType" : 5126,
             "count" : 61,
             "type" : "VEC4"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 1,
+            "max" : [
+                0
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 1,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 1,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 1,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 1,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 1,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 1,
+            "type" : "VEC3"
         }
     ],
     "bufferViews" : [
@@ -158,12 +376,47 @@
             "buffer" : 0,
             "byteLength" : 976,
             "byteOffset" : 1220
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4,
+            "byteOffset" : 2196
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 2200
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 16,
+            "byteOffset" : 2212
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 2228
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 2240
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 16,
+            "byteOffset" : 2252
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 2268
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 2196,
-            "uri" : "data:application/octet-stream;base64,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"
+            "byteLength" : 2280,
+            "uri" : "data:application/octet-stream;base64,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"
         }
     ]
 }

@@ -40,13 +40,30 @@
         <a-nft
             type='nft' url='./tks'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <a-entity
+            <a-assets>
+              <img id="logo1" src="logo01.png">
+            </a-assets>
+            <a-assets>
+              <img id="logo2" src="logo02.png">
+            </a-assets>
+            <a-image src="#logo1"
+                position="-100 0 0"
+            ></a-image>
+            <a-image src="#logo2"
+            position="100 0 0"
+            ></a-image>
+            <a-text value="DOUG & MELISSA"
+                position="0 100 0"
+                align="center"
+                color="red"
+            ></a-text>
+            <!-- <a-entity
                 gltf-model="url(./thanks.gltf)"
                 scale="400 400 400"
                 position="0 0 -1"
                 animation-mixer="clip: *;"
                 >
-            </a-entity>
+            </a-entity> -->
             <!-- <a-entity
                 fbx-model="src: url(cube.fbx);"
                 scale="50 50 50"

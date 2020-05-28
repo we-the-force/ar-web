@@ -51,26 +51,66 @@
    <script src='./aframe-extras.min.js'></script>
    <!-- <script src='./inflate.min.js'></script> -->
 
-   <style>
-     .arjs-loader {
-       height: 100%;
-       width: 100%;
-       position: absolute;
-       top: 0;
-       left: 0;
-       background-color: rgba(0, 0, 0, 0.8);
-       z-index: 9999;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-     }
+    <!-- style for the loader -->
+    <style>
+      .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #bgoverlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: #fff;
+          z-index: 1;
+      }
+      #bgoverlay p {
+          font-family:Arial, Helvetica, sans-serif;
+          font-size: 23px;
+          width: 100%;
+          text-align: center;
+          color: rgb(224, 46, 46);
+          position: absolute;
+          top: 50%;
+          transform: translate(0, 11px);
+      }
+      .play-overlay {
+          z-index: 99999;
+          position: fixed;
+          bottom: 50%;
+          transform: translate(30px, 30px);
+          right: 50%;
+          box-sizing: border-box;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          padding: 12px 24px;
+          padding-bottom: 0px;
+          background: rgb(224, 46, 46) url(play.png) center no-repeat;
+          background-size: 40px 40px;
+      }
 
-     .arjs-loader div {
-       text-align: center;
-       font-size: 1.25em;
-       color: white;
-     }
-   </style>
+      .play-overlay:hover {
+          background: rgba(0, 0, 0, 0.2) url(play.png) center no-repeat;
+          background-size: 40px 40px;
+      }
+
+      .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+      }
+    </style>
 
    <!-- rawgithack development URL -->
    <script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
@@ -90,18 +130,21 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
         <img id="transpImage" crossorigin="anonymous" src="./dm.png">
-		<video id="tnxvideo" autoplay loop="true" src="./lycra-vid.mp4"></video>
+		<video id="vid" autoplay loop="true" src="lycra_vid.webm"></video>
         </a-assets>
-        <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below)--> 
+        <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) 
         <a-image position = "0 1.6 -1" width="6.3" height="1" src="#transpImage" transparent="true" alpha-test="0.5"></a-image>
-
+-->
 		
 		<a-nft
             type='nft' url='./tks'
             smooth='false'>
 
 			<!-- Using the asset management system. -->
-			<a-video src="#tnxvideo" width="16" height="9" position="0 0 -20"></a-video>
+			  <a-entity material="shader: transparent-video;" geometry="primitive: plane;
+			  width: 16;
+			  height: 9" src="#vid"  scale="10 10 10" position="0 0 -20"></a-entity>
+		  
 
 			<!--
             <a-entity
@@ -135,6 +178,14 @@
         </a-nft>
         <a-entity camera></a-entity>
     </a-scene>
+	
+	<a id="playButton" onclick="play('arjs-video')">
+        <div class="btn btn-primary play-overlay menu-overlay"></div>
+    </a>
+    <div id="bgoverlay">
+        <p>Start</p>
+    </div>
+	
     <script>
         AFRAME.registerComponent('alpha-test', {
           dependencies: ['material'],
@@ -142,6 +193,34 @@
             this.el.getObject3D('mesh').material.alphaTest = 0.5;
           }
         });
+		
+		var sceneEl = document.querySelector('a-scene');
+        var entity = sceneEl.querySelector('a-entity');
+        console.log();
+
+        function play(id) {
+            var aVideoAsset = document.querySelector('#' + id);
+            aVideoAsset.play().catch(function(error) {
+                aVideoAsset
+                hideOrShow("playButton");
+                hideOrShow("bgoverlay");
+
+            });
+            aVideoAsset.setAttribute('loop', 'false');
+            hideOrShow('playButton');
+            hideOrShow("bgoverlay");
+
+        }
+
+        function hideOrShow(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+		
     </script>
 </body>
 </html>

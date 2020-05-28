@@ -35,11 +35,15 @@
         vr-mode-ui='enabled: false;'
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
+        <a-assets>
+        <img id="transpImage" crossorigin="anonymous" src="./dm.png">
+        
+        </a-assets>
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
         <a-nft
             type='nft' url='./tks'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <a-image position = "0 1.6 -1" width="6.3" height="1" src="#transpImage" transparent="true" alpha-test="0.5"></a-image>
             <a-entity
                 gltf-model="url(./logowtf.glb)"
                 scale="25 25 25"
@@ -69,4 +73,12 @@
         </a-nft>
 		<a-entity camera></a-entity>
     </a-scene>
+    <script>
+        AFRAME.registerComponent('alpha-test', {
+          dependencies: ['material'],
+          init: function () {
+            this.el.getObject3D('mesh').material.alphaTest = 0.5;
+          }
+        });
+    </script>
 </body>

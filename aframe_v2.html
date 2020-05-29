@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.010</title>
+    <title>VER 0.011</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -103,10 +103,10 @@
         </a-timeline-->
 
         <a-timeline id="myTimeline">
-			<a-timeline-group select="#logo">
-				<a-timeline-animation name="positionin"></a-timeline-animation>
-				<a-timeline-animation name="positionstay"></a-timeline-animation>
-				<a-timeline-animation name="positionout"></a-timeline-animation>
+			<a-timeline-group>
+				<a-timeline-animation select="#logo" name="positionin"></a-timeline-animation>
+				<a-timeline-animation select="#logo" name="positionstay"></a-timeline-animation>
+				<a-timeline-animation select="#logo" name="positionout"></a-timeline-animation>
 			</a-timeline-group>
         </a-timeline>
 		

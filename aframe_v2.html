@@ -131,11 +131,9 @@
 			  id="text3" 			  
               gltf-model="url(./logowtf.glb)"
               scale="25 25 25"			  
-              rotation="-90 0 0"
-			  position="-500 0 -300"
-			  animation__positionin="property: position; from: -500 0 -300  to: 50 0 -300; dur: 300; autoplay: false"
-              animation__positionstay="property: position; to: 50 0 -300; dur: 5000; autoplay: false"
-			  animation__positionout="property: position; from: 50 0 -300; to: 500 0 -300; dur: 300; autoplay: false" 
+              rotation="-90 0 0"			  
+			  animation__positionin="property: position; from: -500 0 -300  to: 50 0 -300; dur: 400; easing: easeIn; autoplay: false"
+			  animation__positionout="property: position; from: 50 0 -300; to: 500 0 -300; dur: 400; easing: easeOut; autoplay: false" 
 			  material="color: red; roughness: 1; metalness: 0"
               >
           </a-entity>

@@ -92,47 +92,18 @@
       <a-assets timeout="10000">
       <img id="transpImage" crossorigin="anonymous" src="./dm.png">
 
-        <!-- ASSETS PARA ANIMACION CON TIMELINE -->
+        <!-- ASSETS PARA ANIMACION CON TIMELINE 
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
-
+-->
+		
         <a-timeline id="myTimeline">
           <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
           <a-timeline-group>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
-            <!--<a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>-->
-            <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation>
-            <!--a-timeline-animation select="#text3" name="fadein"></a-timeline-animation-->
             <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
           </a-timeline-group>
-
           <a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
-
-		  <!--
-          <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
-
-          <a-timeline-group>
-            <a-timeline-animation select="#sky" name="color"></a-timeline-animation>
-            <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
-		  -->
-		  
         </a-timeline>
 
-		<!--
-        <a-mixin id="box"
-          geometry="primitive: box"
-          material="color: #AAA; opacity: 0"
-          animation__fadein="property: material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
-          animation__scale="property: scale; to: 2 20 2; dur: 2000; easing: easeInOutElastic; autoplay: false"
-          animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
-          animation__color="property: material.color; from: #AAA; to: #222; dur: 2500; autoplay: false"
-          animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
-          scale="0.0001 0.0001 0.0001"
-        ></a-mixin>
-        -->
 
         <a-mixin id="text"
           position="0 2 -3"></a-mixin>
@@ -159,12 +130,18 @@
         smoothThreshold="5">
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
 		  <a-entity
+			  id="text3" 
+              mixin="text" 
               gltf-model="url(./logowtf.glb)"
               scale="25 25 25"
               position="50 0 -300"
               rotation="-90 0 0"
-              animation-mixer="clip: *;"
-              material="color: red; roughness: 1; metalness: 0"
+			  animation__positionin="property: position; to: 0 2 -3; dur: 2500; autoplay: false"
+              animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 3500; autoplay: false" 
+              
+			  animation-mixer="clip: *;"
+              
+			  material="color: red; roughness: 1; metalness: 0"
               >
           </a-entity>
           <a-entity

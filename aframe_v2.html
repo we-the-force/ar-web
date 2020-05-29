@@ -96,30 +96,6 @@
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
-          
-		  <!--
-		  <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
-
-          <a-timeline-group>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-            <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
-            <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
-            <a-timeline-animation select="#text2" name="textcolor"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
-          <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
-
-		  -->
-		  
           <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
           <a-timeline-group>
             <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
@@ -194,6 +170,8 @@
           </a-entity>
           -->
           <a-entity
+		      id="text3"
+			  mixin="text" 
               gltf-model="./scene2.glb"
               scale="30 30 30"
               position="50 100 -200"
@@ -202,19 +180,7 @@
           >
           </a-entity>
 
-
-		  <a-image  id="text3"
-			mixin="text" 
-            position="50 0 -300" 
-            width="6.3" 
-            scale="30 30 30" 
-            rotation="-90 0 0" 
-            height="1" 
-            src="#transpImage" 
-            transparent="true" 
-            alpha-test="0.5">
-          </a-image>
-<!--
+		  <!--
 		  <a-image 
             position="0 1.6 -1" 
             width="6.3" 

@@ -97,16 +97,13 @@
 -->
 		
         <a-timeline id="myTimeline">
-          <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
-          <a-timeline-group>
             <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
         </a-timeline>
 
 
-        <a-mixin id="text"
-          position="0 2 -3"></a-mixin>
+        <!--a-mixin id="text"
+          position="0 2 -3"></a-mixin-->
 
 		<!--
         <a-mixin id="text"
@@ -130,8 +127,7 @@
         smoothThreshold="5">
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
 		  <a-entity
-			  id="text3" 
-              mixin="text" 
+			  id="text3" 			  
               gltf-model="url(./logowtf.glb)"
               scale="25 25 25"
               position="0 0 0"

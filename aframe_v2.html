@@ -104,6 +104,7 @@
 
         <a-timeline id="myTimeline">
 			<a-timeline-group>
+				<a-timeline-animation select="#logo" name="positionstart"></a-timeline-animation>
 				<a-timeline-animation select="#logo" name="positionin"></a-timeline-animation>
 				<a-timeline-animation select="#logo" name="positionstay"></a-timeline-animation>
 				<a-timeline-animation select="#logo" name="positionout"></a-timeline-animation>
@@ -144,6 +145,7 @@
               gltf-model="url(./logowtf.glb)"
               scale="25 25 25"			  
               rotation="-90 0 0"
+			  animation__positionstart="property: position; from: -500 0 -300 to: -500 0 -300; dur: 500; autoplay: false"
 			  animation__positionin="property: position; from: -500 0 -300 to: 50 0 -300; dur: 500; autoplay: false"
               animation__positionstay="property: position; from: 50 0 -300 to: 50 0 -300; dur: 5000; autoplay: false"
 			  animation__positionout="property: position; from: 50 0 -300; to: 500 0 -300; dur: 500; autoplay: false" 

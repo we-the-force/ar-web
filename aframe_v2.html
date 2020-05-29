@@ -119,9 +119,9 @@
           <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
           <a-timeline-group>
             <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>
+            <!--<a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>-->
             <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation>
-            <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
+            <!--a-timeline-animation select="#text3" name="fadein"></a-timeline-animation-->
             <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
           </a-timeline-group>
 
@@ -150,7 +150,7 @@
         ></a-mixin>
 
         <a-mixin id="text"
-          text="align: center; color: #333; width: 6; opacity: 0"
+          <!--text="align: center; color: #333; width: 6; opacity: 0"-->
           animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
           animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
@@ -178,6 +178,7 @@
               material="color: red; roughness: 1; metalness: 0"
               >
           </a-entity>
+          -->
           <a-entity
               gltf-model="./scene2.glb"
               scale="30 30 30"
@@ -186,7 +187,7 @@
               animation-mixer="clip: *;"
           >
           </a-entity>
-          -->
+
 
 		  <a-image  id="text3"
 			mixin="text" 

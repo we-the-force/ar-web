@@ -90,7 +90,7 @@
       <!-- on 'url' use the path to the Image Descriptors created before. -->
       <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
       <a-assets timeout="10000">
-      <img id="transpImage" crossorigin="anonymous" src="./dm.png">
+		<img id="transpImage" crossorigin="anonymous" src="./dm.png">
 
         <!-- ASSETS PARA ANIMACION CON TIMELINE 
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
@@ -115,8 +115,14 @@
 		
 		
 		
-        <!--a-mixin id="text"
-          position="0 2 -3"></a-mixin-->
+        <a-mixin id="logoMixin"
+			position="-500 0 -300"
+			animation__positionstart="property: position; from: 200 0 -300 to: 200 0 -300; dur: 500; autoplay: false"
+			animation__positionin="property: position; from: 200 0 -300 to: 50 0 -300; dur: 500; autoplay: false"
+            animation__positionstay="property: position; from: 50 0 -300 to: 50 0 -300; dur: 5000; autoplay: false"
+			animation__positionout="property: position; from: 50 0 -300; to: 500 0 -300; dur: 500; autoplay: false" 
+		>		  
+		</a-mixin>
 
 		<!--
         <a-mixin id="text"
@@ -141,14 +147,10 @@
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
 		  <a-entity
 			  id="logo"
-			  animation-timeline="timeline: #myTimeline"		  
+			  mixin="logoMixin"
               gltf-model="url(./logowtf.glb)"
               scale="25 25 25"			  
               rotation="-90 0 0"
-			  animation__positionstart="property: position; from: 200 0 -300 to: 200 0 -300; dur: 500; autoplay: false"
-			  animation__positionin="property: position; from: 200 0 -300 to: 50 0 -300; dur: 500; autoplay: false"
-              animation__positionstay="property: position; from: 50 0 -300 to: 50 0 -300; dur: 5000; autoplay: false"
-			  animation__positionout="property: position; from: 50 0 -300; to: 500 0 -300; dur: 500; autoplay: false" 
 			  material="color: red; roughness: 1; metalness: 0"
               >
           </a-entity>

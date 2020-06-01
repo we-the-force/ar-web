@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.058</title>
+    <title>VER 0.060</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -102,31 +102,34 @@
 		<img id="img_007" crossorigin="anonymous" src="./img/007.png">
 		<img id="img_008" crossorigin="anonymous" src="./img/008.png">
 		<img id="img_009" crossorigin="anonymous" src="./img/009.png">
-		<img id="img_010" crossorigin="anonymous" src="./img/010.png">
-  
+		<img id="img_010" crossorigin="anonymous" src="./img/010.png">  
 
-        <!-- ASSETS PARA ANIMACION CON TIMELINE 
-        <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
-		
-						<a-timeline-animation select="#001" name="togglevisible"></a-timeline-animation>
-										<a-timeline-animation select="#001" name="togglevisibleoff"></a-timeline-animation>
-										
-							animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"						
-			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"										
-										
--->
-
+        <!-- ASSETS PARA ANIMACION CON TIMELINE -->
         <a-timeline id="myTimeline">
-			<a-timeline-group>
+			<a-timeline-group>						
+				<a-timeline-animation select="#anim_001" name="togglevisible"></a-timeline-animation>
 				<a-timeline-animation select="#anim_001" name="positionin"></a-timeline-animation>
+				<a-timeline-animation select="#anim_001" name="togglevisibleoff"></a-timeline-animation>
+			</a-timeline-group>
+			
+			<a-timeline-group>						
+				<a-timeline-animation select="#anim_002" name="togglevisible2"></a-timeline-animation>
+				<a-timeline-animation select="#anim_002" name="positionin2"></a-timeline-animation>
+				<a-timeline-animation select="#anim_002" name="togglevisibleoff2"></a-timeline-animation>
 			</a-timeline-group>
         </a-timeline>
 		
         <a-mixin id="anim_001Mixin"
-			animation__positionin="property: position; to: 50 -200 -50; dur: 1500; autoplay: false"
-		>		  
-		</a-mixin>
-
+			animation__positionin="property: position; to: 100 -200 -25; dur: 1500; autoplay: false"
+			animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"						
+			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"		
+		></a-mixin>
+		
+        <a-mixin id="anim_002Mixin"
+			animation__positionin2="property: position; to: 120 -210 -25; dur: 1500; autoplay: false"
+			animation__togglevisible2="property: visible; from: false; to: true; dur: 1; autoplay: false"						
+			animation__togglevisibleoff2="property: visible; from: true; to: false; dur: 1; autoplay: false"		
+		></a-mixin>
         <!-- ASSETS PARA ANIMACION CON TIMELINE FIN -->
 
       </a-assets>
@@ -143,11 +146,15 @@
 		  
 		<a-image 
 			id="anim_001" mixin="anim_001Mixin"
-            width="6.88" height="1.62" scale="20 20 20" rotation="-90 0 0" position="5 -200 -50"              
+            width="6.88" height="1.62" scale="20 20 20" rotation="-90 0 0" position="70 -200 -25"              
             src="#img_001" transparent="true" alpha-test="0.5">
         </a-image>
 		  
-		  
+		<a-image 
+			id="anim_002" mixin="anim_002Mixin"
+            width="8.67" height="1.63" scale="20 20 20" rotation="-90 0 0" position="75 -200 -25"              
+            src="#img_002" transparent="true" alpha-test="0.5">
+        </a-image>		  
 		  <!--a-image
               src="#img_001"
 			  transparent="true" alpha-test="0.5"

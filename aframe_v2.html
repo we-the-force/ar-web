@@ -103,7 +103,9 @@
 		<img id="img_008" crossorigin="anonymous" src="./img/008.png">
 		<img id="img_009" crossorigin="anonymous" src="./img/009.png">
 		<img id="img_010" crossorigin="anonymous" src="./img/010.png">  
-
+		<img id="brandis" crossorigin="anonymous" src="./img/brandis.png">
+		<img id="wtflogo" crossorigin="anonymous" src="./img/wtflogo.png"> 
+		
         <!-- ASSETS PARA ANIMACION CON TIMELINE -->
         <a-timeline id="myTimeline">
 			<!-- Thank you (1)-->
@@ -171,7 +173,13 @@
 				<a-timeline-animation select="#anim_010" name="togglevisible"></a-timeline-animation>
 				<a-timeline-animation select="#anim_010" name="positionin"></a-timeline-animation>
 				<a-timeline-animation select="#anim_010" name="togglevisibleoff"></a-timeline-animation>
-			</a-timeline-group>			
+			</a-timeline-group>		
+
+			<a-timeline-group>
+				<a-timeline-animation select="#logos" name="togglevisible"></a-timeline-animation>
+				<a-timeline-animation select="#logos" name="togglevisibleoff"></a-timeline-animation>				
+			</a-timeline-group>
+			
         </a-timeline>
 		
         <a-mixin id="anim_001Mixin"
@@ -238,6 +246,11 @@
 			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"		
 		></a-mixin>
 		
+		<a-mixin id="anim_logos"
+			animation__togglevisible="property: visible; from: false; to: true; dur: 1500; autoplay: false"						
+			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1000; autoplay: false"		
+		></a-mixin>		
+		
         <!-- ASSETS PARA ANIMACION CON TIMELINE FIN -->
 
       </a-assets>
@@ -253,12 +266,14 @@
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
 		  
 		<a-image 
+			visible="false"
 			id="anim_001" mixin="anim_001Mixin"
             width="6.88" height="1.62" scale="20 20 20" rotation="-90 0 0" position="70 -200 -25"              
             src="#img_001" transparent="true" alpha-test="0.5">
         </a-image>
 		  
 		<a-image 
+			visible="false"
 			id="anim_002" mixin="anim_002Mixin"
             width="8.67" height="1.63" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
             src="#img_002" transparent="true" alpha-test="0.5">
@@ -266,18 +281,21 @@
 		  
 		<a-entity id="animGroup1" mixin="animGroup1Mixin" position="0 0 0">
 			<a-image 
+				visible="false"
 				id="anim_003" mixin="anim_003Mixin"
 				width="4.11" height="1.51" scale="20 20 20" rotation="-90 0 0" position="0 -200 -25"              
 				src="#img_003" transparent="true" alpha-test="0.5">
 			</a-image>	
 			  
 			<a-image 
+				visible="false"
 				id="anim_004" mixin="anim_004Mixin"
 				width="3.14" height="1.62" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
 				src="#img_004" transparent="true" alpha-test="0.5">
 			</a-image>			
 					  
 			<a-image 
+				visible="false"
 				id="anim_005" mixin="anim_005Mixin"
 				width="6.10" height="1.64" scale="20 20 20" rotation="-90 0 0" position="220 -200 -25"              
 				src="#img_005" transparent="true" alpha-test="0.5">
@@ -285,35 +303,52 @@
 		</a-entity>
 		
 		<a-image 
+			visible="false"
 			id="anim_006" mixin="anim_006Mixin"
             width="5.88" height="2.30" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
             src="#img_006_2" transparent="true" alpha-test="0.5">
         </a-image>
 		
 		<a-image 
+			visible="false"
 			id="anim_007" mixin="anim_007Mixin"
             width="3.34" height="1.56" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
             src="#img_007" transparent="true" alpha-test="0.5">
         </a-image>
 
 		<a-image 
+			visible="false"
 			id="anim_008" mixin="anim_008Mixin"
             width="2.84" height="1.54" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
             src="#img_008" transparent="true" alpha-test="0.5">
         </a-image>
 
 		<a-image 
+			visible="false"
 			id="anim_009" mixin="anim_009Mixin"
             width="4.24" height="1.53" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
             src="#img_009" transparent="true" alpha-test="0.5">
         </a-image>
 
 		<a-image 
+			visible="false"
 			id="anim_010" mixin="anim_010Mixin"
             width="3.42" height="1.40" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
             src="#img_010" transparent="true" alpha-test="0.5">
         </a-image>
 		
+
+		<a-entity id="logos" mixin="anim_logos" visible="false">
+			<a-image 
+				width="8.01" height="8.00" scale="20 20 20" rotation="-90 0 0" position="50 -800 -25"              
+				src="#wtflogo" transparent="true" alpha-test="0.5">
+			</a-image>
+
+			<a-image 
+				width="8.01" height="8.00" scale="20 20 20" rotation="-90 0 0" position="200 -800 -25"              
+				src="#brandis" transparent="true" alpha-test="0.5">
+			</a-image>
+		</a-entity>
 		
       </a-nft>
       

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.060</title>
+    <title>VER 0.061</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -113,10 +113,28 @@
 			</a-timeline-group>
 			
 			<a-timeline-group>						
-				<a-timeline-animation select="#anim_002" name="togglevisible2"></a-timeline-animation>
-				<a-timeline-animation select="#anim_002" name="positionin2"></a-timeline-animation>
-				<a-timeline-animation select="#anim_002" name="togglevisibleoff2"></a-timeline-animation>
+				<a-timeline-animation select="#anim_002" name="togglevisible"></a-timeline-animation>
+				<a-timeline-animation select="#anim_002" name="positionin"></a-timeline-animation>
+				<a-timeline-animation select="#anim_002" name="togglevisibleoff"></a-timeline-animation>
 			</a-timeline-group>
+
+			
+			<a-timeline-group>						
+				<a-timeline-animation select="#anim_003" name="togglevisible"></a-timeline-animation>
+				<a-timeline-animation select="#anim_003" name="positionin"></a-timeline-animation>
+
+				<a-timeline-animation select="#anim_004" name="togglevisible"></a-timeline-animation>
+				<a-timeline-animation select="#anim_004" name="positionin"></a-timeline-animation>				
+
+				<a-timeline-animation select="#anim_005" name="togglevisible"></a-timeline-animation>
+				<a-timeline-animation select="#anim_005" name="positionin"></a-timeline-animation>						
+				
+				<a-timeline-animation select="#anim_003" name="togglevisibleoff"></a-timeline-animation>
+				<a-timeline-animation select="#anim_004" name="togglevisibleoff"></a-timeline-animation>
+				<a-timeline-animation select="#anim_005" name="togglevisibleoff"></a-timeline-animation>
+			</a-timeline-group>
+			
+			
         </a-timeline>
 		
         <a-mixin id="anim_001Mixin"
@@ -126,10 +144,30 @@
 		></a-mixin>
 		
         <a-mixin id="anim_002Mixin"
-			animation__positionin2="property: position; to: 120 -210 -25; dur: 1500; autoplay: false"
-			animation__togglevisible2="property: visible; from: false; to: true; dur: 1; autoplay: false"						
-			animation__togglevisibleoff2="property: visible; from: true; to: false; dur: 1; autoplay: false"		
+			animation__positionin="property: position; to: 160 -210 -25; dur: 1500; autoplay: false"
+			animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"						
+			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"		
 		></a-mixin>
+		
+		<a-mixin id=anim_003Mixin"
+			animation__positionin="property: position; to: 80 -200 -25; dur:1500; autoplay: false"
+			animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"						
+			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"	
+		></a-mixin>
+		
+		<a-mixin id=anim_004Mixin"
+			animation__positionin="property: position; to: 120 -200 -25; dur:1500; autoplay: false"
+			animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"						
+			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"	
+		></a-mixin>
+		
+		<a-mixin id=anim_005Mixin"
+			animation__positionin="property: position; to: 160 -200 -25; dur:1500; autoplay: false"
+			animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"						
+			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"	
+		></a-mixin>
+				
+		
         <!-- ASSETS PARA ANIMACION CON TIMELINE FIN -->
 
       </a-assets>
@@ -152,24 +190,28 @@
 		  
 		<a-image 
 			id="anim_002" mixin="anim_002Mixin"
-            width="8.67" height="1.63" scale="20 20 20" rotation="-90 0 0" position="75 -200 -25"              
+            width="8.67" height="1.63" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
             src="#img_002" transparent="true" alpha-test="0.5">
-        </a-image>		  
-		  <!--a-image
-              src="#img_001"
-			  transparent="true" alpha-test="0.5"
-			  scale="25 25 25"
-			  position="0 0 -300"
-              >
-          </a-image>
-
-          <!-- ENTIDADES CON ANIMACION POR TIMELINE FIN
+        </a-image>	
 		  
-		  			  id="001"
-		  			  mixin="001Mixin"
+		<a-image 
+			id="anim_003" mixin="anim_003Mixin"
+            width="4.11" height="1.51" scale="20 20 20" rotation="-90 0 0" position="60 -200 -25"              
+            src="#img_002" transparent="true" alpha-test="0.5">
+        </a-image>	
 		  
-		  -->
-
+		<a-image 
+			id="anim_004" mixin="anim_004Mixin"
+            width="3.14" height="1.62" scale="20 20 20" rotation="-90 0 0" position="100 -200 -25"              
+            src="#img_002" transparent="true" alpha-test="0.5">
+        </a-image>			
+				  
+		<a-image 
+			id="anim_005" mixin="anim_005Mixin"
+            width="6.10" height="1.64" scale="20 20 20" rotation="-90 0 0" position="120 -200 -25"              
+            src="#img_002" transparent="true" alpha-test="0.5">
+        </a-image>				
+		
       </a-nft>
       
       <!-- static camera that moves according to the device movemenents -->

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.017</title>
+    <title>VER 0.021</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -79,11 +79,13 @@
       <div>Loading, please wait...</div>
     </div>
 
-    <!-- a-frame scene -->
+    <!-- a-frame scene 
+
+	-->
     <a-scene
-      vr-mode-ui="enabled: false;"
-      renderer="logarithmicDepthBuffer: true;"
-      embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+	  vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true;"	
+	  embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
       animation-timeline__1="timeline: #myTimeline; loop: true"
       >
       <!-- a-nft is the anchor that defines an Image Tracking entity -->
@@ -95,12 +97,6 @@
         <!-- ASSETS PARA ANIMACION CON TIMELINE 
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 -->
-		
-        <!--a-timeline id="myTimeline">
-            <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
-            <a-timeline-animation select="#text3" name="positionstay"></a-timeline-animation>
-			<a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
-        </a-timeline-->
 
         <a-timeline id="myTimeline">
 			<a-timeline-group>
@@ -139,7 +135,7 @@
               >
           </a-entity>
 
-          <!-- ENTIDADES CON ANIMACION POR TIMELINE FIN -->
+          <!-- ENTIDADES CON ANIMACION POR TIMELINE FIN-->
 
       </a-nft>
       

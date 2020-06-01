@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.057</title>
+    <title>VER 0.058</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -93,6 +93,16 @@
       <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
       <a-assets timeout="10000">
 		<img id="img_001" crossorigin="anonymous" src="./img/001.png">
+		<img id="img_002" crossorigin="anonymous" src="./img/002.png">
+		<img id="img_003" crossorigin="anonymous" src="./img/003.png">
+		<img id="img_004" crossorigin="anonymous" src="./img/004.png">
+		<img id="img_005" crossorigin="anonymous" src="./img/005.png">
+		<img id="img_006_1" crossorigin="anonymous" src="./img/006-1.png">
+		<img id="img_006_2" crossorigin="anonymous" src="./img/006-2.png">
+		<img id="img_007" crossorigin="anonymous" src="./img/007.png">
+		<img id="img_008" crossorigin="anonymous" src="./img/008.png">
+		<img id="img_009" crossorigin="anonymous" src="./img/009.png">
+		<img id="img_010" crossorigin="anonymous" src="./img/010.png">
   
 
         <!-- ASSETS PARA ANIMACION CON TIMELINE 
@@ -113,7 +123,7 @@
         </a-timeline>
 		
         <a-mixin id="anim_001Mixin"
-			animation__positionin="property: position; to: 50 -200 -1; dur: 1500; autoplay: false"
+			animation__positionin="property: position; to: 50 -200 -50; dur: 1500; autoplay: false"
 		>		  
 		</a-mixin>
 
@@ -133,7 +143,7 @@
 		  
 		<a-image 
 			id="anim_001" mixin="anim_001Mixin"
-            width="6.88" height="1.62" scale="20 20 20" rotation="-90 0 0" position="5 -200 -1"              
+            width="6.88" height="1.62" scale="20 20 20" rotation="-90 0 0" position="5 -200 -50"              
             src="#img_001" transparent="true" alpha-test="0.5">
         </a-image>
 		  

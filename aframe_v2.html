@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.042</title>
+    <title>VER 0.044</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -93,18 +93,8 @@
       <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
       <a-assets timeout="10000">
 
-		<img id="img_001" crossorigin="anonymous" src="./001.png">
-		<img id="002" crossorigin="anonymous" src="./img/002.png">
-		<img id="003" crossorigin="anonymous" src="./img/003.png">
-		<img id="004" crossorigin="anonymous" src="./img/004.png">
-		<img id="005" crossorigin="anonymous" src="./img/005.png">
-		<img id="006_1" crossorigin="anonymous" src="./img/006-1.png">
-		<img id="006_2" crossorigin="anonymous" src="./img/006-2.png">
-		<img id="007" crossorigin="anonymous" src="./img/007.png">
-		<img id="008" crossorigin="anonymous" src="./img/008.png">
-		<img id="009" crossorigin="anonymous" src="./img/009.png">
-		<img id="010" crossorigin="anonymous" src="./img/010.png">	  
-	  
+		<img id="img_001" crossorigin="anonymous" src="./i001.png">
+  
 
         <!-- ASSETS PARA ANIMACION CON TIMELINE 
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
@@ -131,6 +121,15 @@
         <!-- ASSETS PARA ANIMACION CON TIMELINE FIN -->
 
       </a-assets>
+	  
+	  		  <a-image
+              src="#img_001"
+			  transparent="true" alpha-test="0.5"
+			  scale="25 25 25"
+			  position="0 0 0"
+              >
+          </a-image>
+	  
       <a-nft
         type="nft"
         url="./tks"
@@ -139,7 +138,7 @@
         smoothTolerance=".01"
         smoothThreshold="5">
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-		  <a-image
+		  <!--a-image
               src="#img_001"
 			  transparent="true" alpha-test="0.5"
 			  scale="25 25 25"

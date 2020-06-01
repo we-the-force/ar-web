@@ -80,11 +80,12 @@
     </div>
 
     <!-- a-frame scene 
+
+	-->
+    <a-scene
 	  vr-mode-ui="enabled: false;"
       renderer="logarithmicDepthBuffer: true;"	
 	  embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-	-->
-    <a-scene
       animation-timeline__1="timeline: #myTimeline; loop: true"
       >
       <!-- a-nft is the anchor that defines an Image Tracking entity -->
@@ -117,13 +118,13 @@
         <!-- ASSETS PARA ANIMACION CON TIMELINE FIN -->
 
       </a-assets>
-      <!--a-nft
+      <a-nft
         type="nft"
         url="./tks"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
-        smoothThreshold="5"-->
+        smoothThreshold="5">
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
 		  <a-entity
 			  id="logo"
@@ -136,10 +137,10 @@
 
           <!-- ENTIDADES CON ANIMACION POR TIMELINE FIN-->
 
-      <!--/a-nft-->
+      </a-nft>
       
       <!-- static camera that moves according to the device movemenents -->
-      <!--a-entity camera></a-entity-->
+      <a-entity camera></a-entity>
     </a-scene>
     
     <script>

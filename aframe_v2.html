@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.052</title>
+    <title>VER 0.053</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -113,7 +113,7 @@
         </a-timeline>
 		
         <a-mixin id="anim_001Mixin"
-			animation__positionin="property: position; to: 100 0 -300; dur: 1500; autoplay: false"
+			animation__positionin="property: position; to: 8 3 -1; dur: 1500; autoplay: false"
 		>		  
 		</a-mixin>
 
@@ -131,16 +131,11 @@
         smoothThreshold="5">
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
 		  
-		   <a-image 
-            position="0 1.6 -1" 
-            width="6.88" 
-            scale="30 30 30" 
-            rotation="-90 0 0" 
-            height="1.62" 
-            src="#img_001" 
-            transparent="true" 
-            alpha-test="0.5">
-          </a-image>
+		<a-image 
+			id="anim_001" mixin="anim_001Mixin"
+            width="6.88" height="1.62" scale="30 30 30" rotation="-90 0 0" position="3 3 -1"              
+            src="#img_001" transparent="true" alpha-test="0.5">
+        </a-image>
 		  
 		  
 		  <!--a-image

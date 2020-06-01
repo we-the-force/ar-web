@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.025</title>
+    <title>VER 0.026</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -93,6 +93,17 @@
       <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
       <a-assets timeout="10000">
 		<img id="transpImage" crossorigin="anonymous" src="./dm.png">
+		<img id="001" crossorigin="anonymous" src="./img/001.png">
+		<img id="002" crossorigin="anonymous" src="./img/002.png">
+		<img id="003" crossorigin="anonymous" src="./img/003.png">
+		<img id="004" crossorigin="anonymous" src="./img/004.png">
+		<img id="005" crossorigin="anonymous" src="./img/005.png">
+		<img id="006_1" crossorigin="anonymous" src="./img/006-1.png">
+		<img id="006_2" crossorigin="anonymous" src="./img/006-2.png">
+		<img id="007" crossorigin="anonymous" src="./img/007.png">
+		<img id="008" crossorigin="anonymous" src="./img/008.png">
+		<img id="009" crossorigin="anonymous" src="./img/009.png">
+		<img id="010" crossorigin="anonymous" src="./img/010.png">
 
         <!-- ASSETS PARA ANIMACION CON TIMELINE 
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
@@ -100,16 +111,16 @@
 
         <a-timeline id="myTimeline">
 			<a-timeline-group>
-				<a-timeline-animation select="#logo" name="positionin"></a-timeline-animation>
-				<a-timeline-animation select="#logo" name="positionstay"></a-timeline-animation>
-				<a-timeline-animation select="#logo" name="positionout"></a-timeline-animation>
+				<a-timeline-animation select="#001" name="togglevisible"></a-timeline-animation>
+				<a-timeline-animation select="#001" name="positionin"></a-timeline-animation>
+				<a-timeline-animation select="#001" name="togglevisibleoff"></a-timeline-animation>
 			</a-timeline-group>
         </a-timeline>
 		
-        <a-mixin id="logoMixin"
-			animation__positionin="property: position; to: 50 0 -300; dur: 500; autoplay: false"
-            animation__positionstay="property: position; from: 50 0 -300 to: 50 0 -300; dur: 2000; autoplay: false"
-			animation__positionout="property: position; from: 50 0 -300; to: 500 0 -300; dur: 500; autoplay: false" 
+        <a-mixin id="001Mixin"
+			animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+			animation__positionin="property: position; to: 100 200 -300; dur: 1500; autoplay: false"
+			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
 		>		  
 		</a-mixin>
 
@@ -125,12 +136,11 @@
         smoothThreshold="5">
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
 		  <a-entity
-			  id="logo"
-			  mixin="logoMixin"
-              gltf-model="url(./logowtf.glb)"			  
+			  id="001"
+			  mixin="001Mixin"
+              img="url(./img/001.png)"			  
               scale="25 25 25"		
-			  position="-500 0 -300"
-              rotation="-90 0 0"
+			  position="0 200 -300"
               >
           </a-entity>
 

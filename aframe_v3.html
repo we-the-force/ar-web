@@ -8,7 +8,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 	<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
-    <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script> -->
     <script src="https://unpkg.com/aframe-animation-timeline-component@1.6.0/dist/aframe-animation-timeline-component.min.js"></script>
 
     <!-- style for the loader -->
@@ -105,6 +105,7 @@
 		<img id="img_010" crossorigin="anonymous" src="./img/010.png">  
 		<img id="brandis" crossorigin="anonymous" src="./img/brandis.png">
 		<img id="wtflogo" crossorigin="anonymous" src="./img/wtflogo.png"> 
+		<img id="loading" crossorigin="anonymous" src="./loading.gif"> 
 		
         <!-- ASSETS PARA ANIMACION CON TIMELINE -->
         <a-timeline id="myTimeline">
@@ -305,7 +306,7 @@
 		</a-entity>
 		
 		<!-- todo el grupo de animaciones de la parte inferior -->
-		<a-entity position="-25 -120 -25">
+		<!-- <a-entity position="-25 -120 -25">
 			<a-image 
 				visible="false"
 				id="anim_001" mixin="anim_001Mixin"
@@ -377,7 +378,7 @@
 				width="3.42" height="1.40" scale="25 25 25" rotation="-90 0 0" position="85 0 0"              
 				src="#img_010" transparent="true" alpha-test="0.5">
 			</a-image>
-		</a-entity>
+		</a-entity> -->
 		<!--a-entity id="logos" mixin="anim_logos" visible="false" position="0 0 0">
 			<a-image 
 				width="8.01" height="8.00" scale="15 15 15" rotation="-90 0 0" position="0 -850 -25"              

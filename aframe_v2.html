@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.081</title>
+    <title>VER 0.082</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -176,8 +176,9 @@
 			</a-timeline-group>		
 
 			<!-- Logos -->
-			<a-timeline-group>
+			<a-timeline-group>			
 				<a-timeline-animation select="#logos" name="togglevisible"></a-timeline-animation>
+				<a-timeline-animation select="#logos" name="toggleopacity"></a-timeline-animation>
 				<a-timeline-animation select="#logos" name="positionin"></a-timeline-animation>
 				<a-timeline-animation select="#logos" name="togglevisibleoff"></a-timeline-animation>				
 				<a-timeline-animation select="#logos" name="positionout"></a-timeline-animation>
@@ -251,6 +252,7 @@
 		
 		<a-mixin id="anim_logos"
 			animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"	
+			animation__toggleopacity="property: opacity; to: 1; dur: 5000; autoplay:false"
 			animation__positionin="property: position; to: 0 0 0; dur: 2500; autoplay: false"	
 			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"		
 			animation__positionout="property: position; to: 0 0 0; dur: 2500; autoplay: false"
@@ -343,14 +345,14 @@
         </a-image>
 		
 
-		<a-entity id="logos" mixin="anim_logos" visible="false" position="0 0 0">
+		<a-entity id="logos" mixin="anim_logos" visible="false" position="0 0 0" transparent="true" opacity="0">
 			<a-image 
-				width="8.01" height="8.00" scale="13 13 13" rotation="-90 0 0" position="0 -450 -25"              
+				width="8.01" height="8.00" scale="20 20 20" rotation="-90 0 0" position="0 -650 -25"              
 				src="#wtflogo" transparent="true" alpha-test="0.5">
 			</a-image>
 
 			<a-image 
-				width="8.01" height="8.00" scale="13 13 13" rotation="-90 0 0" position="150 -450 -25"              
+				width="8.01" height="8.00" scale="20 20 20" rotation="-90 0 0" position="150 -650 -25"              
 				src="#brandis" transparent="true" alpha-test="0.5">
 			</a-image>
 		</a-entity>

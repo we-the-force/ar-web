@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.086</title>
+    <title>VER 0.087</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./aframe-ar-nft.js"></script>
@@ -175,13 +175,13 @@
 				<a-timeline-animation select="#anim_010" name="togglevisibleoff"></a-timeline-animation>
 			</a-timeline-group>		
 
-			<!-- Logos -->
+			<!-- Logos - ->
 			<a-timeline-group>			
 				<a-timeline-animation select="#logos" name="togglevisible"></a-timeline-animation>
 				<a-timeline-animation select="#logos" name="positionin"></a-timeline-animation>
 				<a-timeline-animation select="#logos" name="togglevisibleoff"></a-timeline-animation>				
 				<a-timeline-animation select="#logos" name="positionout"></a-timeline-animation>
-			</a-timeline-group>
+			</a-timeline-group-->
 			
         </a-timeline>
 		
@@ -249,16 +249,33 @@
 			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"		
 		></a-mixin>
 		
-		<a-mixin id="anim_logos"
+		<!--a-mixin id="anim_logos"
 			animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
 			animation__positionin="property: position; to: 0 0 0; dur: 2500; autoplay: false"	
 			animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"		
 			animation__positionout="property: position; to: 0 0 0; dur: 1500; autoplay: false"
-		></a-mixin>		
+		></a-mixin-->		
 		
         <!-- ASSETS PARA ANIMACION CON TIMELINE FIN -->
 
       </a-assets>
+		  
+		  
+		  
+		<a-entity id="logos" mixin="anim_logos" visible="false" position="0 0 0">
+			<a-image 
+				width="8.01" height="8.00" scale="15 15 15" rotation="-90 0 0" position="0 -850 -25"              
+				src="#wtflogo" transparent="true" alpha-test="0.5">
+			</a-image>
+
+			<a-image 
+				width="8.01" height="8.00" scale="15 15 15" rotation="-90 0 0" position="150 -850 -25"              
+				src="#brandis" transparent="true" alpha-test="0.5">
+			</a-image>
+		</a-entity>
+		  
+		  
+		  
 		  
 		  
       <a-nft
@@ -342,7 +359,7 @@
             src="#img_010" transparent="true" alpha-test="0.5">
         </a-image>
 		
-		<a-entity id="logos" mixin="anim_logos" visible="false" position="0 0 0">
+		<!--a-entity id="logos" mixin="anim_logos" visible="false" position="0 0 0">
 			<a-image 
 				width="8.01" height="8.00" scale="15 15 15" rotation="-90 0 0" position="0 -850 -25"              
 				src="#wtflogo" transparent="true" alpha-test="0.5">
@@ -352,7 +369,7 @@
 				width="8.01" height="8.00" scale="15 15 15" rotation="-90 0 0" position="150 -850 -25"              
 				src="#brandis" transparent="true" alpha-test="0.5">
 			</a-image>
-		</a-entity>
+		</a-entity-->
 		
       </a-nft>
       

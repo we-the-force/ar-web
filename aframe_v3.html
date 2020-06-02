@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>VER 0.143</title>
+    <title>VER 0.145</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 	<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-    <!--script src="./aframe-ar-nft.js"></script>
-    <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script-->
+    <script src="./aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script>
     <script src="https://unpkg.com/aframe-animation-timeline-component@1.6.0/dist/aframe-animation-timeline-component.min.js"></script>
 
     <!-- style for the loader -->
@@ -105,6 +105,7 @@
 		<img id="img_010" crossorigin="anonymous" src="./img/010.png">  
 		<img id="brandis" crossorigin="anonymous" src="./img/brandis.png">
 		<img id="wtflogo" crossorigin="anonymous" src="./img/wtflogo.png"> 
+		<img id="imggif" src="./loading.gif">
 		
         <!-- ASSETS PARA ANIMACION CON TIMELINE -->
         <a-timeline id="myTimeline">
@@ -260,14 +261,14 @@
 
       </a-assets>
 		  
-      <!--a-nft
+      <a-nft
         type="nft"
         url="./tks"
         smooth="true"
 		smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
-		-->
+		>
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
 
 			<a-entity 
@@ -390,10 +391,10 @@
 			</a-image>
 		</a-entity-->
 		
-      <!--/a-nft>
+      </a-nft>
       
-      <!-- static camera that moves according to the device movemenents - ->
-      <a-entity camera></a-entity-->
+      <!-- static camera that moves according to the device movemenents -->
+      <a-entity camera></a-entity>
     </a-scene>
     
     <script>

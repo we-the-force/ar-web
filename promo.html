@@ -21,7 +21,19 @@
 		<a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" 
 		embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">	
 
-			<a-assets timeout="10000">
+		
+		          <a-entity
+              gltf-model="url(./logowtf.glb)"
+              scale="25 25 25"
+              position="50 0 -300"
+              rotation="-90 0 0"
+              animation-mixer="clip: *;"
+              material="color: red; roughness: 1; metalness: 0"
+              >
+          </a-entity>
+		
+		
+			<!--a-assets timeout="10000">
 				<img id="wall" crossorigin="anonymous" src="./wtfpromo/wall.png">
 				<img id="dog" crossorigin="anonymous" src="./wtfpromo/dog.png">
 			</a-assets>
@@ -32,9 +44,11 @@
 				src="#wall" transparent="true" alpha-test="0.5"></a-image>	
 
 				<a-image width="7.5" height="7.5" scale="1 1 1" rotation="-90 0 0" position="0 -50 0"              
-				src="#dog" transparent="true" alpha-test="0.5"></a-image>	
+				src="#dog" transparent="true" alpha-test="0.5"></a-image-->	
 				
 			</a-nft>
+			
+			<a-entity camera></a-entity>
 		</a-scene>
 	
 	</body>

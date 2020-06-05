@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>WTF Ver 0.038</title>
+		<title>WTF Ver 0.039</title>
 		<!-- import aframe and then ar.js with image tracking / location based features -->
 		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
@@ -76,7 +76,19 @@
 						<a-timeline-animation select="#anim_004" name="togglevisibleoff"></a-timeline-animation>
 					</a-timeline-group>
 
-
+					<a-timeline-group>							
+						<a-timeline-animation select="#anim_005" name="togglevisible"></a-timeline-animation>
+						<a-timeline-animation select="#anim_005" name="positionstay"></a-timeline-animation>
+						<a-timeline-animation select="#anim_005" name="togglevisibleoff"></a-timeline-animation>
+					</a-timeline-group>
+					
+					<a-timeline-group>							
+						<a-timeline-animation select="#anim_006" name="togglevisible"></a-timeline-animation>
+						<a-timeline-animation select="#anim_006" name="positionstay"></a-timeline-animation>
+						<a-timeline-animation select="#anim_006" name="togglevisibleoff"></a-timeline-animation>
+					</a-timeline-group>
+					
+					
 					<a-mixin id="anim_001Mixin"
 						animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"	
 						animation__positionstay="property: position; to: 0 0 0; dur: 120; autoplay: false"					
@@ -101,14 +113,14 @@
 						animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false">
 					</a-mixin>					
 					
-					<a-mixin id="anim_003MixinBak"
+					<a-mixin id="anim_005Mixin"
 						animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"	
 						animation__positionstay="property: position; to: 0 0 0; dur: 120; autoplay: false"					
 						animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false">
 					</a-mixin>
 					
 					
-					<a-mixin id="anim_004Mixin"
+					<a-mixin id="anim_006Mixin"
 						animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"	
 						animation__positionstay="property: position; to: 0 0 0; dur: 120; autoplay: false"					
 						animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false">
@@ -136,11 +148,11 @@
 					width="150" height="180" scale="1 1 1" rotation="-90 0 0" position="0 0 0"              
 					src="#anim4" transparent="true" alpha-test="0.5"></a-image>		
 
-					<a-image visible="false" id="anim_003" mixin="anim_003MixinBak"
+					<a-image visible="false" id="anim_005" mixin="anim_005Mixin"
 					width="150" height="180" scale="1 1 1" rotation="-90 0 0" position="0 0 0"              
 					src="#anim3" transparent="true" alpha-test="0.5"></a-image>	
 
-					<a-image visible="false" id="anim_002" mixin="anim_002MixinBak"
+					<a-image visible="false" id="anim_006" mixin="anim_006Mixin"
 					width="150" height="180" scale="1 1 1" rotation="-90 0 0" position="0 0 0"              
 					src="#anim2" transparent="true" alpha-test="0.5"></a-image>						
 				</a-entity>

@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>WTF Ver 0.033</title>
+		<title>WTF Ver 0.034</title>
 		<!-- import aframe and then ar.js with image tracking / location based features -->
 		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-		<!--script src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script>
-		<script src="https://unpkg.com/aframe-animation-timeline-component@1.6.0/dist/aframe-animation-timeline-component.min.js"></script-->
+		<!--script src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script-->
+		<script src="https://unpkg.com/aframe-animation-timeline-component@1.6.0/dist/aframe-animation-timeline-component.min.js"></script>
 		
 		
 		<style>
@@ -42,21 +42,86 @@
 		</div>
 	
 		<a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" 
-		embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">	
+		embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+		animation-timeline__1="timeline: #myTimeline; loop: true">	
 		
 			<a-assets timeout="10000">
-				<img id="wall" crossorigin="anonymous" src="./wtfpromo/wall.png">
-				<img id="dog" crossorigin="anonymous" src="./wtfpromo/dog.png">
+				<img id="anim1" crossorigin="anonymous" src="./wtfpromo/anim1.png">
+				<img id="anim2" crossorigin="anonymous" src="./wtfpromo/anim2.png">
+				<img id="anim3" crossorigin="anonymous" src="./wtfpromo/anim3.png">
+				<img id="anim4" crossorigin="anonymous" src="./wtfpromo/anim4.png">
+				
+				<a-timeline id="myTimeline">
+					<a-timeline-group>							
+						<a-timeline-animation select="#anim_001" name="togglevisible"></a-timeline-animation>
+						<a-timeline-animation select="#anim_001" name="positionstay"></a-timeline-animation>
+						<a-timeline-animation select="#anim_001" name="togglevisibleoff"></a-timeline-animation>
+					</a-timeline-group>
+
+					<a-timeline-group>							
+						<a-timeline-animation select="#anim_002" name="togglevisible"></a-timeline-animation>
+						<a-timeline-animation select="#anim_002" name="positionstay"></a-timeline-animation>
+						<a-timeline-animation select="#anim_002" name="togglevisibleoff"></a-timeline-animation>
+					</a-timeline-group>
+					
+					<a-timeline-group>							
+						<a-timeline-animation select="#anim_003" name="togglevisible"></a-timeline-animation>
+						<a-timeline-animation select="#anim_003" name="positionstay"></a-timeline-animation>
+						<a-timeline-animation select="#anim_003" name="togglevisibleoff"></a-timeline-animation>
+					</a-timeline-group>
+					
+					<a-timeline-group>							
+						<a-timeline-animation select="#anim_004" name="togglevisible"></a-timeline-animation>
+						<a-timeline-animation select="#anim_004" name="positionstay"></a-timeline-animation>
+						<a-timeline-animation select="#anim_004" name="togglevisibleoff"></a-timeline-animation>
+					</a-timeline-group>
+
+
+					<a-mixin id="anim_001Mixin"
+						animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"	
+						animation__positionstay="property: position; to: 0 0 0; dur: 50; autoplay: false"					
+						animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false">
+					</a-mixin>
+
+					<a-mixin id="anim_002Mixin"
+						animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"	
+						animation__positionstay="property: position; to: 0 0 0; dur: 50; autoplay: false"					
+						animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false">
+					</a-mixin>					
+					
+					<a-mixin id="anim_003Mixin"
+						animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"	
+						animation__positionstay="property: position; to: 0 0 0; dur: 50; autoplay: false"					
+						animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false">
+					</a-mixin>
+
+					<a-mixin id="anim_004Mixin"
+						animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"	
+						animation__positionstay="property: position; to: 0 0 0; dur: 50; autoplay: false"					
+						animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false">
+					</a-mixin>
+					
+				</a-timeline>
+				
 			</a-assets>
 		
 			<a-nft type="nft" url="./wtfpromo/kim" smooth="true" smoothCount="20" smoothTolerance=".05" smoothThreshold="15" size="0.4">	
 
-				<a-image width="450" height="450" scale="1 1 1" rotation="-90 0 0" position="170 -2 -350"              
-				src="#wall" transparent="true" alpha-test="0.5"></a-image>	
+				<a-image visible="false" id="anim_001" mixin="anim_001Mixin"
+				width="150" height="180" scale="1 1 1" rotation="-90 0 0" position="0 0 0"              
+				src="#anim1" transparent="true" alpha-test="0.5"></a-image>	
 
-				<a-image width="450" height="450" scale="1 1 1" rotation="-90 0 0" position="170 -1 -350"              
-				src="#dog" transparent="true" alpha-test="0.5"></a-image>	
+				<a-image visible="false" id="anim_002" mixin="anim_002Mixin"
+				width="150" height="180" scale="1 1 1" rotation="-90 0 0" position="0 0 0"              
+				src="#anim2" transparent="true" alpha-test="0.5"></a-image>	
 				
+				<a-image visible="false" id="anim_003" mixin="anim_003Mixin"
+				width="150" height="180" scale="1 1 1" rotation="-90 0 0" position="0 0 0"              
+				src="#anim3" transparent="true" alpha-test="0.5"></a-image>	
+				
+				<a-image visible="false" id="anim_004" mixin="anim_004Mixin"
+				width="150" height="180" scale="1 1 1" rotation="-90 0 0" position="0 0 0"              
+				src="#anim4" transparent="true" alpha-test="0.5"></a-image>					
 			</a-nft>
 			
 			<a-entity camera></a-entity>
